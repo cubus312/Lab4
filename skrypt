@@ -1,12 +1,21 @@
 #!/bin/bash
 
-if [[ "$1" == "--init"  || "$1" == "-i" ]]; then
-  git clone <name>
-  repo_name=$(basename <name> .git)
-  repo_path=$(pwd)/${repo_name}
-  echo "export PATH=\$PATH:${repo_path}" >> ~/.bashrc
-  source ~/.bashrc
+if [[ "$1" == "--error" || "$1" == "-e" ]]; then
+  num_files=100
 
-  echo "Udało się"
+  if [[ "$1" == "--error" && "$2" =~ ^[0-9]+$ ]]; then
+    num_files="$2"
+  elif [[ "$1" == "-e" && "$2" =~ ^[0-9]+$ ]]; then
+    num_files="$2"
+  fi
 
+  mkdir -p errorx
+
+  for ((i=1; i<=$num_files; i++)); do
+    echo "Nazwa pliku: error$i.txt" > errorx/error$i.txt
+    echo "Nazwa skryptu: skrypt.sh" >> errorx/error$i.txt
+    echo "Data utworzenia: $(date)" >> errorx/error$i.txt
+  done
+
+  echo "Utworzono $num_files plików errorx/errorx.txt"
 fi
