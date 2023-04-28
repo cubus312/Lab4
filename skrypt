@@ -17,5 +17,5 @@ if [[ "$1" == "--error" || "$1" == "-e" ]]; then
     echo "Data utworzenia: $(date)" >> errorx/error$i.txt
   done
 
-  echo "Utworzono $num_files plików error/errorx.txt"
+  echo "Utworzono $num_files plików errorx/errorx.txt"
 fi
