@@ -1,0 +1,17 @@
+#!/bin/bash
+
+num_files=100
+
+if [[ "$1" == "--logs" || "$1" == "-l" ]]; then
+    if [ "$#" -gt 1 ]; then
+        num_files="$2"
+    fi
+fi
+
+for ((i=1; i<=num_files; i++)); do
+    filename="log${i}.txt"
+    echo "Nazwa pliku: ${filename}" > "${filename}"
+    echo "Nazwa skryptu: skrypt.sh" >> "${filename}"
+    echo "Data utworzenia: $(date)" >> "${filename}"
+    echo "Utworzono plik: ${filename}"
+done
