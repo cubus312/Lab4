@@ -1,0 +1,7 @@
+#!/bin/bash
+
+today=$(date +%d-%m-%Y)
+
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
+  echo "Dzisiejsza data: $today"
+fi
