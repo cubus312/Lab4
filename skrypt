@@ -1,9 +1,12 @@
 #!/bin/bash
 
-if [ "$1" == "--help" ]; then
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "Dostępne opcje to:"
-	echo "--logs x      Domyślnie tworzy 100 plików, w których zapisuje nazwę pliku,skryptu i datę." 
+	echo "--logs x lub  -l   Domyślnie tworzy 100 plików, w których zapisuje nazwę pliku,skryptu i datę." 
 	echo "Dodatkowo w miejsce x można wpisać dowolną wartość która zmieni ilość tworzonych plików."
-	echo "--date 	    Wyświetla dzisiejszą datę."
-	echo "--help        Wyświtetla wszystkie dodatkowe opcje ^^^^^^^^^^"
+	echo "--date  lub   -d   Wyświetla dzisiejszą datę."
+	echo "--help  lub   -h   Wyświtetla wszystkie dodatkowe opcje "
+        echo "--error lub   -e   Tworzy folder error, gdzie zapisuje pliki. Domyślnie tworzy ich 100, ale można wpisać ilość"
+ 	echo "--init  lub   -i   Klonuje całe repozytorium do katalogu w którym został uruchomiony oraz ustawia ścieżkę w zmiennej PATH"
 fi
+
